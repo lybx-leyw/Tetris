@@ -9,7 +9,7 @@
 2. **代码展示**：作为个人编程能力的证明
 3. **开源贡献**：为开源社区贡献一份学生项目
 
-**重要提示**：本项目包含浙江大学 ACLLib 图形库，同样遵循 GPL v3 许可证。详见[LICENSE](LICENSE)
+**重要提示**：本项目包含浙江大学 ACLLib 图形库，同样遵循 GPL v3 许可证。详见[LICENSE](LICENSE)。
 
 ##  项目结构
 
@@ -112,7 +112,3 @@ void rotate_block(Blockstate* state) {
 
 <img alt="Pasted image 20260103133403" src="https://github.com/user-attachments/assets/54ec583c-07bb-475a-ba3d-4c796c9dcbda" />
 *消除单行界面*
-
-
-
-
