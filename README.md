@@ -104,13 +104,13 @@ void rotate_block(Blockstate* state) {
 ---
 ## 附录：游戏界面展示
 
-<img width="2208" height="1050" alt="Pasted image 20260103133309" src="https://github.com/user-attachments/assets/9ef4f1ed-8109-4987-9595-baa0f9a4d0ca" />
+<img width="2208" height="1050" alt="Pasted image 20260103133309" src="https://github.com/user-attachments/assets/9cd58e30-08f3-4f3b-aa77-afffa6417550" />
 *游戏Guide界面*
 
-<img width="2402" height="1836" alt="Pasted image 20260103133227" src="https://github.com/user-attachments/assets/2a75b9e4-92bf-48d9-afe4-ea1aec967791" />
+<img width="2402" height="1836" alt="Pasted image 20260103133227" src="https://github.com/user-attachments/assets/c9eef9eb-8ed7-404e-90fc-473fb130a0d5" />
 *正常游戏界面*
 
-<img width="2398" height="1830" alt="Pasted image 20260103133403" src="https://github.com/user-attachments/assets/ddad4fee-4176-416e-b34d-aff32222cf18" />
+<img width="2398" height="1830" alt="Pasted image 20260103133403" src="https://github.com/user-attachments/assets/54ec583c-07bb-475a-ba3d-4c796c9dcbda" />
 *消除单行界面*
 
 
