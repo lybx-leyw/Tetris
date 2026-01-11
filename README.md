@@ -92,14 +92,18 @@ Soft drop bonus: +10 points per cell
 
 ---
 
-    Welcome everyone to submit issues and improvement suggestions.
-    This project is for learning and exchange purposes only.
+Welcome everyone to submit issues and improvement suggestions.
+
+This project is for learning and exchange purposes only.
 
 ---
-    **Author**: Zhejiang University Student - Lüyibuxi
-    **Version**: 1.0
-    **Core Code Completion Date**: August 14, 2025
-    **Open Source Release Date**: January 3, 2026
+**Author**: Zhejiang University Student - Lüyibuxi
+
+**Version**: 1.0
+
+**Core Code Completion Date**: August 14, 2025
+
+**Open Source Release Date**: January 3, 2026
 
 ---
 ## Appendix: Game Interface Showcase
