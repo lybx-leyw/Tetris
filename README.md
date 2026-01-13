@@ -99,7 +99,7 @@ This project is for learning and exchange purposes only.
 ---
 **Author**: Zhejiang University Student - Lüyibuxi
 
-**Version**: 1.0
+**Version**: 1.0.1
 
 **Core Code Completion Date**: August 14, 2025
 
