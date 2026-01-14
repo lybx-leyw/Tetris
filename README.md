@@ -1,5 +1,8 @@
 **俄罗斯方块（Tetris）**  
+
+
 <img alt="Pasted image 20260103133227" src="https://github.com/user-attachments/assets/c9eef9eb-8ed7-404e-90fc-473fb130a0d5" >
+
 
 **温馨提示**
  - 代码中使用的 ACLLib 图形库具有静态库依赖，作者已在项目中完成正确连接。若需重新编译，请确保你的 Dev-C++ 项目已按 acllib.h 或 acllib.c 中的说明正确配置所需的静态库文件
