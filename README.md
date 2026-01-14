@@ -1,4 +1,4 @@
-# Tetris
+<img width="2180" height="1040" alt="image" src="https://github.com/user-attachments/assets/47298ad6-faf2-4f06-b2e2-feb8d11a39a8" /># Tetris
 
 This is a Tetris game project I created to **solidify my C programming foundation**. A simple Tetris game implemented based on the ACLLib graphics library, developed using pure C language.
 
@@ -108,7 +108,7 @@ This project is for learning and exchange purposes only.
 ---
 ## Appendix: Game Interface Showcase
 
-<img alt="Pasted image 20260103133309" src="https://github.com/user-attachments/assets/9cd58e30-08f3-4f3b-aa77-afffa6417550" />
+<img alt="Pasted image 20260103133309" src="https://github.com/user-attachments/assets/cff3d35c-d87e-428f-bc94-ee96093c2d4f" />
 *Game Guide Interface*
 
 <img alt="Pasted image 20260103133227" src="https://github.com/user-attachments/assets/c9eef9eb-8ed7-404e-90fc-473fb130a0d5" />
