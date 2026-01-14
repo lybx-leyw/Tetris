@@ -1,45 +1,47 @@
-# Tetris
+**俄罗斯方块（Tetris）**  
+<img alt="Pasted image 20260103133227" src="https://github.com/user-attachments/assets/c9eef9eb-8ed7-404e-90fc-473fb130a0d5" >
 
-This is a Tetris game project I created to **solidify my C programming foundation**. A simple Tetris game implemented based on the ACLLib graphics library, developed using pure C language.
+**温馨提示**
+ - 代码中使用的 ACLLib 图形库具有静态库依赖，作者已在项目中完成正确连接。若需重新编译，请确保你的 Dev-C++ 项目已按 acllib.h 或 acllib.c 中的说明正确配置所需的静态库文件
+ - 本项目结构清晰，游戏参数（如地图尺寸、初始下落速度、消除规则等）均在 main.c 文件开头以宏定义或变量形式集中设置，便于自行调整和实验
+ - 代码以学习演示为目的，部分实现可能并非最优方案，欢迎交流改进思路
 
-## License Description
+**许可证说明**  
+本项目采用GNU通用公共许可证v3.0，主要用于：  
+- **学习交流**：供其他学习C语言的同学参考  
+- **代码展示**：作为个人编程能力的证明  
+- **开源贡献**：为学生项目贡献开源社区  
 
-This project uses the **GNU General Public License v3.0** license, primarily for:
-1.  **Learning and Exchange**: To share with other students learning C language for reference.
-2.  **Code Showcase**: To serve as proof of personal programming ability.
-3.  **Open Source Contribution**: To contribute a student project to the open-source community.
+**重要提示**：本项目包含浙江大学ACLLib图形库，该库同样遵循GPL v3协议。详见LICENSE文件。
 
-**Important Note**: This project includes the Zhejiang University ACLLib graphics library, which also follows the GPL v3 license. See [LICENSE](LICENSE) for details.
-
-## Project Structure
-
+**项目结构**  
 ```
 Tetris/
 ├── acllib.c
 ├── acllib.h
-├── main.c               # Main game program
-├── main.h               # Main header file
-├── draw.c               # Graphics drawing module
-├── draw.h               # Graphics drawing header file
-├── map.c                # Game map and block management
-├── map.h                # Map management header file
-├── recore.c             # Score recording module
-├── recore.h             # Score recording header file
+├── main.c               # 主游戏程序
+├── main.h               # 主头文件
+├── draw.c               # 图形绘制模块
+├── draw.h               # 图形绘制头文件
+├── map.c                # 游戏地图与方块管理
+├── map.h                # 地图管理头文件
+├── recore.c             # 分数记录模块
+├── recore.h             # 分数记录头文件
 ├── Tetris.dev
 ├── best_record.txt
 └── recore.txt
 ```
 
-## Project Setup Steps
-1.  Download and install Dev-C++.
-2.  Double-click to open the `Tetris.dev` project file.
-3.  Click **Compile & Run** (F11) to start the game.
-4.  After modifying the code, recompile to see the effects immediately.
+**项目配置步骤**  
+1. 下载安装Dev-C++  
+2. 双击打开Tetris.dev项目文件  
+3. 点击编译运行（F11）启动游戏  
+4. 修改代码后重新编译即可立即查看效果 
 
-## Algorithm Features
-Linear transformation handles block rotation.
+**算法特色**  
+采用线性变换处理方块旋转：  
 ```c
-// Rotation matrix calculation
+// 旋转变换矩阵计算
 void line_change(int* x, int* y, int line[2][3]) {
     int a = *x;
     int b = *y;
@@ -47,72 +49,62 @@ void line_change(int* x, int* y, int line[2][3]) {
     *y = line[1][0]*a + line[1][1]*b + line[1][2];
 }
 
-// Rotate block
+// 方块旋转函数
 void rotate_block(Blockstate* state) {
-    // Calculate rotation matrix
+    // 计算旋转矩阵
     int rotation_matrix[2][3] = {
         {0, -1, state->x + state->y},
         {1,  0, state->y - state->x}
     };
-
-    // Apply to each block unit
-    for (each block unit) {
-        line_change(&unit_x, &unit_y, rotation_matrix);
+    
+    // 应用于每个方块单元
+    for (每个方块单元) {
+        line_change(&单元x坐标, &单元y坐标, rotation_matrix);
     }
 }
 ```
 
-## Core Game Features
+**核心游戏功能**  
+1. **分数与等级系统**  
+   ```c
+   // 计分公式
+   单行消除：+200分
+   双行消除：+800分（200×2²）
+   三行消除：+1800分（200×3²）
+   四行消除：+3200分（200×4²）
+   软降奖励：每格+10分
+   ```
 
-### 1. Score and Level System
-```c
-// Score calculation formula
-Single line clear: +200 points
-Double line clear: +800 points (200×2²)
-Triple line clear: +1800 points (200×3²)
-Tetris (four lines): +3200 points (200×4²)
-Soft drop bonus: +10 points per cell
-```
+2. **速度调节机制**  
+   - 基础速度：1000ms/格（可调节）  
+   - 速度控制：S键加速×2，Q键减速÷2  
+   - 软降功能：按住↓键临时加速  
 
-### 2. Speed Adjustment Mechanism
--   **Base Speed**: 1000ms/cell (adjustable)
--   **Speed Control**: S key for ×2 acceleration, Q key for ÷2 deceleration
--   **Soft Drop**: Hold Down Arrow key for temporary acceleration
+3. **特殊功能**  
+   - 清屏机会：每局游戏一次清屏机会（C键）  
+   - 暂停功能：随时暂停游戏（P键）  
+   - 一键重启：重置游戏（R键）  
 
-### 3. Special Functions
--   **Clear Chance**: One chance to clear the board per game (C key)
--   **Pause Function**: Pause the game anytime (P key)
--   **Restart**: Reset the game with one key (R key)
+**致谢**  
+- 感谢ACLLib团队：提供优秀的C语言图形库，降低学习门槛  
+- 感谢师长同学：学习过程中的帮助与鼓励  
+- 感谢坚持的自己：完成第一个完整编程项目  
 
-## Acknowledgments
+欢迎大家提交Issue和改进建议。  
 
--   **Thanks to the ACLLib Team**: For providing an excellent C language graphics library, lowering the learning barrier.
--   **Thanks to teachers and classmates**: For the help and encouragement during the learning process.
--   **Thanks to my persistent self**: For completing the first full programming project.
+本项目仅用于学习交流目的。  
 
----
+作者：浙大学生 - 绿意不息  
+版本：1.0.1  
+核心代码完成日期：2025年8月14日  
+开源发布日期：2026年1月3日  
 
-Welcome everyone to submit issues and improvement suggestions.
-
-This project is for learning and exchange purposes only.
-
----
-**Author**: Zhejiang University Student - Lüyibuxi
-
-**Version**: 1.0.1
-
-**Core Code Completion Date**: August 14, 2025
-
-**Open Source Release Date**: January 3, 2026
-
----
-## Appendix: Game Interface Showcase
-
+**附录：游戏界面展示**  
 <img alt="Pasted image 20260103133309" src="https://github.com/user-attachments/assets/cff3d35c-d87e-428f-bc94-ee96093c2d4f" />
-*Game Guide Interface*
+*游戏引导界面*  
 
 <img alt="Pasted image 20260103133227" src="https://github.com/user-attachments/assets/c9eef9eb-8ed7-404e-90fc-473fb130a0d5" />
-*Normal Game Interface*
+*常规游戏界面*  
 
 <img alt="Pasted image 20260103133403" src="https://github.com/user-attachments/assets/54ec583c-07bb-475a-ba3d-4c796c9dcbda" />
-*Single Line Clear Interface*
+*单行消除界面*  
